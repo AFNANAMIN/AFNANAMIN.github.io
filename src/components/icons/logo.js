@@ -2,6 +2,7 @@ import React from 'react';
 
 const IconLogo = () => (
   <svg
+    id="logo"
     version="1.0"
     xmlns="http://www.w3.org/2000/svg"
     width="1000.000000pt"
