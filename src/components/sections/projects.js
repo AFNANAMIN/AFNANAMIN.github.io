@@ -80,12 +80,29 @@ const StyledProject = styled.li`
     ${({ theme }) => theme.mixins.flexBetween};
     margin-bottom: 35px;
 
+    .project-top-left {
+      display: flex;
+      align-items: center;
+    }
+
     .folder {
       color: var(--green);
       svg {
         width: 40px;
         height: 40px;
       }
+    }
+
+    .company-badge {
+      margin-left: 12px;
+      padding: 3px 10px;
+      border: 1px solid var(--green);
+      border-radius: 20px;
+      color: var(--green);
+      font-family: var(--font-mono);
+      font-size: var(--fz-xxs);
+      line-height: 1.5;
+      white-space: nowrap;
     }
 
     .project-links {
@@ -176,6 +193,7 @@ const Projects = () => {
           node {
             frontmatter {
               title
+              company
               tech
               github
               external
@@ -210,14 +228,17 @@ const Projects = () => {
 
   const projectInner = node => {
     const { frontmatter, html } = node;
-    const { github, external, title, tech } = frontmatter;
+    const { github, external, title, tech, company } = frontmatter;
 
     return (
       <div className="project-inner">
         <header>
           <div className="project-top">
-            <div className="folder">
-              <Icon name="Folder" />
+            <div className="project-top-left">
+              <div className="folder">
+                <Icon name="Folder" />
+              </div>
+              {company && <span className="company-badge">{company}</span>}
             </div>
             <div className="project-links">
               {github && (
