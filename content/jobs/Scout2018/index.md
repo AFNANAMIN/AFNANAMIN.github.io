@@ -1,7 +1,8 @@
 ---
-title: 'Software Developer'
+date: '2020-10-01'
+title: 'Associate Software Engineer'
 company: 'TPS'
-range: 'October 2020 - January 2021'
+range: 'October 2020 - June 2021'
 url: 'https://web.northeastern.edu/scout/'
 ---
 

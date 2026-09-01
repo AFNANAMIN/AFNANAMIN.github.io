@@ -7,6 +7,33 @@
 const path = require('path');
 const _ = require('lodash');
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  createTypes(`
+    type MarkdownRemark implements Node {
+      frontmatter: MarkdownRemarkFrontmatter
+    }
+
+    type MarkdownRemarkFrontmatter {
+      title: String
+      company: String
+      location: String
+      range: String
+      url: String
+      date: Date @dateformat
+      tech: [String]
+      github: String
+      external: String
+      ios: String
+      android: String
+      cta: String
+      cover: File @fileByRelativePath
+      slug: String
+      tags: [String]
+    }
+  `);
+};
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const postTemplate = path.resolve(`src/templates/post.js`);

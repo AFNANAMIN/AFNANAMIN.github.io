@@ -125,7 +125,25 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['Kafka', 'Pyspark', 'Terraform', 'Docker', 'Python', 'C++','Superset','Apache Airflow','Apache Pinot','Zookeeper','Graffana','MongoDB','Postgres','Apache Hive','Apache HUDI','AWS (S3, EC2, EKS, DMS, DynamoDB, Glue)'];
+  const skills = [
+    'Kafka',
+    'Pyspark',
+    'Terraform',
+    'Docker',
+    'Python',
+    'C++',
+    'Superset',
+    'Apache Airflow',
+    'Apache Flink',
+    'Apache Pinot',
+    'Zookeeper',
+    'Grafana',
+    'MongoDB',
+    'Postgres',
+    'Apache Hive',
+    'Apache HUDI',
+    'AWS (S3, EC2, EKS, DMS, DynamoDB, Glue)',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,34 +153,49 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-            Hello! I'm Afnan, a software engineer who enjoys creating things that live on the internet and can scale with it. My interest in technology started back in 2016 the time when I was researching options for doing my bachelors. I was truly fascinated by the world of technology, It still awestruck me how an electric charges can signal for a yes or no digitally, these signals are are utilized using logical statements known as programming or coding.
+              Hello! I'm Afnan, a strategic data engineering leader with 7+ years of experience
+              building the pipelines and platforms that businesses run on. I'm currently a{' '}
+              <strong>Data Engineer</strong> at{' '}
+              <a href="https://www.workhuman.com/" target="_blank" rel="noreferrer">
+                Workhuman
+              </a>{' '}
+              in Dublin, Ireland, where I focus on cloud-native data infrastructure on AWS and
+              modern streaming pipelines with Apache Flink.
             </p>
-            <p>Since technology and particularly how software works became my obsession, my dream of becoming a Software Engineer started, living in Karachi there was no better place for me to live this dream other than `NED University` a 125+ years old Engineering University and a huge alumni network.
-In December 2016, I got admission at NED Universiy at the department of Computer Sciences, the wishes, blood and sweat produced its results.
-            </p>
-
-<p>
-With a very bright time acedemically, I also served volunteerily as a Director and then as a Event Chairperson at `Love for Data` from 2019 - 2020, my focus was to promote computer sciences and drive interests by organizing hackathons, conferences, seminars and job-fairs. I was awarded fully-funded tution scholarship by HEC based on merit and academic performance.
-
-
-
-</p>
-
-
-            
 
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://www.workforcesoftware.com/">An International Technology firm,</a> serving many Fortune`500 companies.{' '}
-              <a href="https://www.tpsworldwide.com/">A fintech Company</a>, working on financial inclusion of masses in Pakistan and digitalizing traditional saving methods.{' '}
-              <a href="https://www.lovefordata.com/">An analytics start-up</a>, working on retail foot-traffic data providing solutions for better profits and customer experience.{' '}
-              <a href="https://www.bazaartech.com/">An Ecommerce startup </a> ,a decacorn enterprise startup, which keeps on adding world class products to its fleet. Here working as a Service Lead for a low-level architecture and development of micro-services based API platform for omnichannel support and its developer docs project. As a Service Lead and  Software Engineer || at Bazaar, I was responsible for development related to data engineering, gather data and managing an advance big data platform.{' '}
-             
+              My path started at `NED University of Engineering & Technology` in Karachi, a 125+
+              year old institution with a huge alumni network, where I studied Computer Science from
+              2016-2020 on a fully-funded, merit-based HEC tuition scholarship. Alongside my
+              studies, I volunteered with `Love for Data`, first as Director and then as Event
+              Chairperson, organizing hackathons, conferences, and job fairs to grow interest in
+              computer science.
             </p>
 
-            
+            <p>
+              Since then, I've worked across{' '}
+              <a href="https://www.workforcesoftware.com/" target="_blank" rel="noreferrer">
+                an international technology firm
+              </a>{' '}
+              serving Fortune 500 companies,{' '}
+              <a href="https://www.tpsworldwide.com/" target="_blank" rel="noreferrer">
+                a fintech company
+              </a>{' '}
+              driving financial inclusion in Pakistan,{' '}
+              <a href="https://www.lovefordata.com/" target="_blank" rel="noreferrer">
+                an analytics startup
+              </a>{' '}
+              turning retail foot-traffic data into insight, and{' '}
+              <a href="https://www.bazaartech.com/" target="_blank" rel="noreferrer">
+                Bazaar Technologies
+              </a>
+              , a decacorn ecommerce startup, where I served as a Service Lead building the
+              low-level architecture for a micro-services based, omnichannel API platform. I was
+              also recently named a finalist for the Rising Star Award at the 2026 Diversity &
+              Inclusion in Tech Awards.
+            </p>
 
-            <p>Here are a few tool and technologies I’ve been working with recently:</p>
+            <p>Here are a few tools and technologies I've been working with recently:</p>
           </div>
 
           <ul className="skills-list">

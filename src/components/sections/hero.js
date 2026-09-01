@@ -64,22 +64,24 @@ const Hero = () => {
   const four = (
     <>
       <p>
-      A capable and efficient problem solver who had work on multiple ecommerce and banking clients to make them go live with an end to end data pipelines and processes.I’m a  Software Engineer || specializing in building and designing exceptional digital and customer experiences. Currently, I'm responsible for programming and managing core APIs for AI-based Omnichannel platform, to ensure 'High Availability and Scalability' of network critical applications, reducing queue-times and improving response rates and building the product that empowers eccomerce sector all over the world to create the next big thing at {' '}
-      
-        <a href="https://www.bazaartech.com/" target="_blank" rel="noreferrer">
-         Bazaar Technologies.
-        </a>
-        .
+        A strategic data engineering leader with 7+ years of experience shipping end-to-end data
+        pipelines and platforms for ecommerce, banking, and enterprise clients across Pakistan and
+        Ireland. I'm currently a Data Engineer at{' '}
+        <a href="https://www.workhuman.com/" target="_blank" rel="noreferrer">
+          Workhuman
+        </a>{' '}
+        in Dublin, where I build cloud-native data infrastructure and reliable data products that
+        businesses actually run on.
       </p>
     </>
   );
   const five = (
     <a
       className="email-link"
-      href="https://github.com/AFNANAMIN"
+      href="https://www.linkedin.com/in/afnanamin/"
       target="_blank"
       rel="noreferrer">
-      Check out my Github!
+      Connect with me on LinkedIn!
     </a>
   );
 

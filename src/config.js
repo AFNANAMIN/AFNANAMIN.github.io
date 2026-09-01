@@ -10,12 +10,11 @@ module.exports = {
       name: 'Instagram',
       url: 'https://www.instagram.com/afnan.amin.ali/',
     },
-  
+
     {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/afnanamin/',
     },
-   
   ],
 
   navLinks: [
@@ -26,6 +25,10 @@ module.exports = {
     {
       name: 'Experience',
       url: '/#jobs',
+    },
+    {
+      name: 'Projects',
+      url: '/#projects',
     },
     {
       name: 'Contact',

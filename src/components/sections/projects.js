@@ -169,10 +169,7 @@ const Projects = () => {
   const data = useStaticQuery(graphql`
     query {
       projects: allMarkdownRemark(
-        filter: {
-          fileAbsolutePath: { regex: "/content/projects/" }
-          frontmatter: { showInProjects: { ne: false } }
-        }
+        filter: { fileAbsolutePath: { regex: "/content/projects/" } }
         sort: { fields: [frontmatter___date], order: DESC }
       ) {
         edges {
@@ -216,15 +213,97 @@ const Projects = () => {
     const { github, external, title, tech } = frontmatter;
 
     return (
-      <div >
-       
+      <div className="project-inner">
+        <header>
+          <div className="project-top">
+            <div className="folder">
+              <Icon name="Folder" />
+            </div>
+            <div className="project-links">
+              {github && (
+                <a href={github} aria-label="GitHub Link" target="_blank" rel="noreferrer">
+                  <Icon name="GitHub" />
+                </a>
+              )}
+              {external && (
+                <a
+                  href={external}
+                  aria-label="External Link"
+                  className="external"
+                  target="_blank"
+                  rel="noreferrer">
+                  <Icon name="External" />
+                </a>
+              )}
+            </div>
+          </div>
+
+          <h3 className="project-title">
+            <a href={external ? external : github ? github : '#'}>{title}</a>
+          </h3>
+
+          <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
+        </header>
+
+        {tech && tech.length > 0 && (
+          <footer>
+            <ul className="project-tech-list">
+              {tech.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          </footer>
+        )}
       </div>
     );
   };
 
   return (
-    <StyledProjectsSection>
-     
+    <StyledProjectsSection id="projects">
+      <h2 className="numbered-heading" ref={revealTitle}>
+        Projects
+      </h2>
+
+      <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
+        view the archive
+      </Link>
+
+      <ul className="projects-grid">
+        {prefersReducedMotion ? (
+          <>
+            {projectsToShow &&
+              projectsToShow.map(({ node }, i) => (
+                <StyledProject key={i}>{projectInner(node)}</StyledProject>
+              ))}
+          </>
+        ) : (
+          <TransitionGroup component={null}>
+            {projectsToShow &&
+              projectsToShow.map(({ node }, i) => (
+                <CSSTransition
+                  key={i}
+                  classNames="fadeup"
+                  timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
+                  exit={false}>
+                  <StyledProject
+                    key={i}
+                    ref={el => (revealProjects.current[i] = el)}
+                    style={{
+                      transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
+                    }}>
+                    {projectInner(node)}
+                  </StyledProject>
+                </CSSTransition>
+              ))}
+          </TransitionGroup>
+        )}
+      </ul>
+
+      {projects.length > GRID_LIMIT && (
+        <button className="more-button" onClick={() => setShowMore(!showMore)}>
+          Show {showMore ? 'Less' : 'More'}
+        </button>
+      )}
     </StyledProjectsSection>
   );
 };
