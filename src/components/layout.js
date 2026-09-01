@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
-import { Head, Loader, Nav, Social, Email, Footer } from '@components';
+import { Head, Loader, Nav, Social, Email, Footer, ScrollToTop } from '@components';
 import { GlobalStyle, theme } from '@styles';
 
 const StyledContent = styled.div`
@@ -13,6 +13,14 @@ const StyledContent = styled.div`
 const Layout = ({ children, location }) => {
   const isHome = location.pathname === '/';
   const [isLoading, setIsLoading] = useState(isHome);
+
+  // Only play the intro animation once per browser session — repeat visits
+  // (or SPA navigations back to "/") shouldn't force the user to wait again.
+  useEffect(() => {
+    if (isHome && window.sessionStorage.getItem('hasVisited')) {
+      setIsLoading(false);
+    }
+  }, [isHome]);
 
   // Sets target="_blank" rel="noopener noreferrer" on external links
   const handleExternalLinks = () => {
@@ -59,7 +67,12 @@ const Layout = ({ children, location }) => {
           </a>
 
           {isLoading && isHome ? (
-            <Loader finishLoading={() => setIsLoading(false)} />
+            <Loader
+              finishLoading={() => {
+                setIsLoading(false);
+                window.sessionStorage.setItem('hasVisited', '1');
+              }}
+            />
           ) : (
             <StyledContent>
               <Nav isHome={isHome} />
@@ -70,6 +83,8 @@ const Layout = ({ children, location }) => {
                 {children}
                 <Footer />
               </div>
+
+              <ScrollToTop />
             </StyledContent>
           )}
         </ThemeProvider>

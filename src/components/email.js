@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { email } from '@config';
@@ -35,13 +35,30 @@ const StyledLinkWrapper = styled.div`
   }
 `;
 
-const Email = ({ isHome }) => (
-  <Side isHome={isHome} orientation="right">
-    <StyledLinkWrapper>
-      <a href={`mailto:${email}`}>{email}</a>
-    </StyledLinkWrapper>
-  </Side>
-);
+const Email = ({ isHome }) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleClick = e => {
+    if (!navigator.clipboard) {
+      return;
+    }
+    e.preventDefault();
+    navigator.clipboard.writeText(email).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    });
+  };
+
+  return (
+    <Side isHome={isHome} orientation="right">
+      <StyledLinkWrapper>
+        <a href={`mailto:${email}`} onClick={handleClick} aria-label="Copy email address">
+          {copied ? 'Copied!' : email}
+        </a>
+      </StyledLinkWrapper>
+    </Side>
+  );
+};
 
 Email.propTypes = {
   isHome: PropTypes.bool,
