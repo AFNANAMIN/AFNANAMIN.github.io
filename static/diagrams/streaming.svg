@@ -5,7 +5,7 @@
     </marker>
   </defs>
   <style>
-    .box { fill: #1e1e1e; stroke: #2e2e2e; stroke-width: 1; }
+    .box { fill: #1c2029; stroke: #2a2f3a; stroke-width: 1; }
     .label { fill: #ccd6f6; font-family: 'SF Mono','Menlo',Consolas,monospace; font-size: 12px; text-anchor: middle; }
     .arrow { stroke: #ffb454; stroke-width: 1.5; marker-end: url(#arrow2); }
   </style>
