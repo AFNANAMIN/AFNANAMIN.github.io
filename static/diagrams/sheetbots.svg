@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 170" width="500" height="170">
+  <defs>
+    <marker id="arrow6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ffb454" />
+    </marker>
+  </defs>
+  <style>
+    .box { fill: #1e1e1e; stroke: #2e2e2e; stroke-width: 1; }
+    .label { fill: #ccd6f6; font-family: 'SF Mono','Menlo',Consolas,monospace; font-size: 12px; text-anchor: middle; }
+    .arrow { stroke: #ffb454; stroke-width: 1.5; marker-end: url(#arrow6); }
+  </style>
+
+  <rect class="box" x="6" y="57" width="112" height="56" rx="6" />
+  <text class="label" x="62" y="81"><tspan x="62" dy="0">Data</tspan><tspan x="62" dy="16">Warehouse</tspan></text>
+
+  <line class="arrow" x1="120" y1="85" x2="140" y2="85" />
+
+  <rect class="box" x="142" y="57" width="130" height="56" rx="6" stroke="#ffb454" />
+  <text class="label" x="207" y="81"><tspan x="207" dy="0">PySpark +</tspan><tspan x="207" dy="16">Airflow (hourly)</tspan></text>
+
+  <line class="arrow" x1="274" y1="85" x2="294" y2="85" />
+
+  <rect class="box" x="296" y="57" width="120" height="56" rx="6" />
+  <text class="label" x="356" y="81"><tspan x="356" dy="0">SheetBots /</tspan><tspan x="356" dy="16">Slackbots</tspan></text>
+
+  <line class="arrow" x1="418" y1="85" x2="438" y2="85" />
+
+  <rect class="box" x="440" y="57" width="54" height="56" rx="6" />
+  <text class="label" x="467" y="81"><tspan x="467" dy="0">Biz</tspan><tspan x="467" dy="16">Teams</tspan></text>
+
+  <text class="label" x="250" y="145" style="font-size:11px; fill:#8892b0;">Dashboards in Apache Superset</text>
+</svg>

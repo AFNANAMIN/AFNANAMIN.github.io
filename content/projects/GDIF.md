@@ -6,6 +6,7 @@ github: ''
 external: ''
 ios: ''
 android: ''
+diagram: '/diagrams/gdif.svg'
 tech:
   - Scala
   - Amazon EMR

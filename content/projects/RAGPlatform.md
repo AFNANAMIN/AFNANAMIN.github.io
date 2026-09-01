@@ -6,6 +6,7 @@ github: ''
 external: ''
 ios: ''
 android: ''
+diagram: '/diagrams/rag-platform.svg'
 tech:
   - AWS Bedrock
   - OpenSearch

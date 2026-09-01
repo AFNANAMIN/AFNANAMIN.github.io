@@ -24,6 +24,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       tech: [String]
       github: String
       external: String
+      diagram: String
       ios: String
       android: String
       cta: String

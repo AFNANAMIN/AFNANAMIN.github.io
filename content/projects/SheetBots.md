@@ -6,6 +6,7 @@ github: ''
 external: ''
 ios: ''
 android: ''
+diagram: '/diagrams/sheetbots.svg'
 tech:
   - PySpark
   - Apache Airflow

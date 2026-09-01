@@ -6,6 +6,7 @@ github: ''
 external: ''
 ios: ''
 android: ''
+diagram: '/diagrams/federated-query.svg'
 tech:
   - Trino
   - Apache Pinot

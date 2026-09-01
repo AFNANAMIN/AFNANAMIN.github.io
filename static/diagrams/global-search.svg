@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 170" width="500" height="170">
+  <defs>
+    <marker id="arrow4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ffb454" />
+    </marker>
+  </defs>
+  <style>
+    .box { fill: #1e1e1e; stroke: #2e2e2e; stroke-width: 1; }
+    .label { fill: #ccd6f6; font-family: 'SF Mono','Menlo',Consolas,monospace; font-size: 12px; text-anchor: middle; }
+    .arrow { stroke: #ffb454; stroke-width: 1.5; marker-end: url(#arrow4); }
+  </style>
+
+  <rect class="box" x="10" y="57" width="140" height="56" rx="6" />
+  <text class="label" x="80" y="81"><tspan x="80" dy="0">25+ Years</tspan><tspan x="80" dy="16">Historical Data</tspan></text>
+
+  <line class="arrow" x1="152" y1="85" x2="172" y2="85" />
+
+  <rect class="box" x="174" y="57" width="164" height="56" rx="6" stroke="#ffb454" />
+  <text class="label" x="256" y="81"><tspan x="256" dy="0">Partitioning +</tspan><tspan x="256" dy="16">Personalization</tspan></text>
+
+  <line class="arrow" x1="340" y1="85" x2="360" y2="85" />
+
+  <rect class="box" x="362" y="57" width="128" height="56" rx="6" />
+  <text class="label" x="426" y="81"><tspan x="426" dy="0">OpenSearch</tspan><tspan x="426" dy="16">Index</tspan></text>
+
+  <text class="label" x="250" y="145" style="font-size:11px; fill:#8892b0;">Faster queries · better search relevance</text>
+</svg>

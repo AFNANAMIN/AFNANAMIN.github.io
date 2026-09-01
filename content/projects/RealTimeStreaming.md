@@ -6,6 +6,7 @@ github: ''
 external: ''
 ios: ''
 android: ''
+diagram: '/diagrams/streaming.svg'
 tech:
   - Apache Flink
   - Flink CDC

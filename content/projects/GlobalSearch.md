@@ -6,6 +6,7 @@ github: ''
 external: ''
 ios: ''
 android: ''
+diagram: '/diagrams/global-search.svg'
 tech:
   - OpenSearch
   - Python

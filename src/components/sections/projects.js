@@ -161,6 +161,21 @@ const StyledProject = styled.li`
     }
   }
 
+  .project-diagram {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--lightest-navy);
+    background-color: var(--dark-navy);
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
   .project-tech-list {
     display: flex;
     align-items: flex-end;
@@ -197,6 +212,7 @@ const Projects = () => {
               tech
               github
               external
+              diagram
             }
             html
           }
@@ -228,7 +244,7 @@ const Projects = () => {
 
   const projectInner = node => {
     const { frontmatter, html } = node;
-    const { github, external, title, tech, company } = frontmatter;
+    const { github, external, title, tech, company, diagram } = frontmatter;
 
     return (
       <div className="project-inner">
@@ -264,6 +280,12 @@ const Projects = () => {
           </h3>
 
           <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
+
+          {diagram && (
+            <div className="project-diagram">
+              <img src={diagram} alt={`${title} architecture diagram`} loading="lazy" />
+            </div>
+          )}
         </header>
 
         {tech && tech.length > 0 && (
